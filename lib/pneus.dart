@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:hayumi/freios.dart';
 import 'package:hayumi/motor.dart';
 import 'package:hayumi/pneu1.dart';
+import 'package:hayumi/pneu2.dart';
+import 'package:hayumi/pneu3.dart';
+import 'package:hayumi/pneu4.dart';
+import 'package:hayumi/pneu5.dart';
 import 'package:hayumi/rodas.dart';
 import 'package:hayumi/todos.dart';
 
 class PagPneus extends StatefulWidget {
+  const PagPneus({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _PagPneusState createState() => _PagPneusState();
 }
 
@@ -26,37 +33,37 @@ class _PagPneusState extends State<PagPneus> with SingleTickerProviderStateMixin
   }
 
   // Função para navegar entre as telas 
-  void _navigateToScreen(int index) {
+  void _navegacaoentretelas(int index) {
     if (index == 2) return; // Evita recarregar a pag que ta selecianada peno numero do case
     switch (index) {
       case 0:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TelaTodos()),
+          MaterialPageRoute(builder: (context) => const TelaTodos()),
         );
         break;
       case 1:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagRodas()),
+          MaterialPageRoute(builder: (context) => const PagRodas()),
         );
         break;
       case 2:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagPneus()),
+          MaterialPageRoute(builder: (context) => const PagPneus()),
         );
         break;
       case 3:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagMotor()),
+          MaterialPageRoute(builder: (context) => const PagMotor()),
         );
         break;
       case 4:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagFreios()),
+          MaterialPageRoute(builder: (context) => const PagFreios()),
         );
         break;
     }
@@ -66,22 +73,22 @@ class _PagPneusState extends State<PagPneus> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 214, 239, 255),
+      backgroundColor: const Color.fromARGB(255, 214, 239, 255),
       appBar: AppBar(
         title: const Text('Pneus',style: TextStyle(
             color: Color(0xFFFFCC00), 
           ),),
-          backgroundColor: Color.fromARGB(255, 0, 36, 84),
+          backgroundColor: const Color.fromARGB(255, 0, 36, 84),
           elevation: 0,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Color(0xFFFFCC00),
           ),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => TelaTodos()),
+              MaterialPageRoute(builder: (context) => const TelaTodos()),
             );
           },
         ),
@@ -93,17 +100,17 @@ class _PagPneusState extends State<PagPneus> with SingleTickerProviderStateMixin
           ),
         ],
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(48.0),
+          preferredSize: const Size.fromHeight(48.0),
           child: TabBar(
             controller: _tabController,
             isScrollable: false, 
-            labelColor: Color.fromARGB(255, 255, 204, 0),
+            labelColor: const Color.fromARGB(255, 255, 204, 0),
             unselectedLabelColor: const Color.fromARGB(255, 255, 204, 0),
-            indicator: BoxDecoration(), // Remove o marcador de de pag selecionada
+            indicator: const BoxDecoration(), // Remove o marcador de de pag selecionada
             onTap: (index) {
-              _navigateToScreen(index); // Chama a função de navegação
+              _navegacaoentretelas(index); // Chama a função de navegação
             },
-            tabs: [
+            tabs: const [
               Tab(text: 'Todos'),
               Tab(text: 'Rodas'),
               Tab(text: 'Pneus'),
@@ -123,45 +130,47 @@ class _PagPneusState extends State<PagPneus> with SingleTickerProviderStateMixin
             ImageButton(
               imagePath: 'img/pneu_110H_Scorpion.jpg',
               label: 'Pneus 110H Scorpion',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Pneu1()),
+                  MaterialPageRoute(builder: (context) => const Pneu1()),
                 );
               },
             ),
             ImageButton(
               imagePath: 'img/pneu_aro_15_archiles.jpg',
               label: 'Pneu archiles aro 15',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PagPneus()),
+                  MaterialPageRoute(builder: (context) => const Pneu2()),
                 );
               },
             ),
             ImageButton(
               imagePath: 'img/pneu_aro_16_goodyear.jpg',
               label: 'Pneu aro 16 goodyear',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
-              fontWeight: FontWeight.bold),
-              onPressed: () {
-                // navegação
-              },
-            ),
-            ImageButton(
-              imagePath: 'img/pneu_aro_16_xbri.jpg',
-              label: 'Pneu aro 16 xbri',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PagFreios()),
+                  MaterialPageRoute(builder: (context) => const Pneu3()),
+                );              },
+            ),
+            ImageButton(
+              imagePath: 'img/pneu_aro_16_xbri.jpg',
+              label: 'Pneu aro 16 xbri',
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
+              fontWeight: FontWeight.bold),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Pneu4()),
                 );
               },
             ),
@@ -169,10 +178,13 @@ class _PagPneusState extends State<PagPneus> with SingleTickerProviderStateMixin
             ImageButton(
               imagePath: 'img/pneu_aro22_xbri.jpg',
               label: 'Motor 2.5',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
-                // Navegação 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Pneu5()),
+                );
               },
             ),
           ],

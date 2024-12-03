@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Simula um atraso para a tela de splash
-    Future.delayed(const Duration(seconds: 13), () {
+    Future.delayed(const Duration(seconds: 3), () {
       // ignore: use_build_context_synchronously
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const LoginPage()), // Navega para a telatodos
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 36, 84), // Cor de fundo da tela de splash
+      backgroundColor: const Color.fromARGB(255, 0, 36, 84), // Cor de fundo da tela de splash
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

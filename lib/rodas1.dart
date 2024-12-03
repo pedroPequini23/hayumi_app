@@ -1,56 +1,59 @@
 import 'package:flutter/material.dart';
 
 
-class roda1 extends StatelessWidget {
+class Roda1 extends StatelessWidget {
+  const Roda1({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return TelaProduto1();
+    return const TelaProduto1();
 
   }
 }
 
 class TelaProduto1 extends StatefulWidget {
+  const TelaProduto1({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _TelaProduto1State createState() => _TelaProduto1State();
 }
 
 class _TelaProduto1State extends State<TelaProduto1> {
   final List<Map<String, dynamic>> produtos = [
     {
-      "nome": "Jogo de rodas esportivas aro 15",
-      "preco": "R\$ 2000",
-      "marca": "Sto Rodas",
+      "nome": "Jogo de rodas de marca bmw (NOVO)",
+      "preco": "R\$ 7500",
+      "marca": "BMW",
       "imagens": [
-        "img/rodas_aro15_sport.jpg",
+        "img/roda_bmw_outro_angulo.jpg",
         "img/rodas_bmw_aro22.jpg",
-        "img/rodas_duster_oroch.jpg",
       ],
-      "descricao": "4 rodas esportivas aro 15 da marca STO",
+      "descricao": "4 rodas esportivas de marca BMW",
     },
-    // Você pode adicionar mais produtos aqui
   ];
 
   int _currentImageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    final produto = produtos[0]; // Exibindo o primeiro produto para este exemplo
+    final produto = produtos[0];
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 214, 239, 255),
+      backgroundColor: const Color.fromARGB(255, 214, 239, 255),
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Rodas',
+            'Jogo de rodas de marca bmw',
             style: TextStyle(
               color: Color(0xFFFFCC00),
             ),
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 0, 36, 84),
+        backgroundColor: const Color.fromARGB(255, 0, 36, 84),
         elevation: 0,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Color(0xFFFFCC00),
           ),
@@ -75,7 +78,7 @@ class _TelaProduto1State extends State<TelaProduto1> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               Stack(
                 alignment: Alignment.center,
                 children: [
@@ -87,7 +90,7 @@ class _TelaProduto1State extends State<TelaProduto1> {
                         BoxShadow(
                           color: Colors.black.withOpacity(0.1),
                           blurRadius: 8.0,
-                          offset: Offset(0, 4),
+                          offset: const Offset(0, 4),
                         ),
                       ],
                     ),
@@ -97,7 +100,7 @@ class _TelaProduto1State extends State<TelaProduto1> {
                         produto["imagens"][_currentImageIndex],
                         height: 400.0,
                         width: double.infinity,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
@@ -135,7 +138,7 @@ class _TelaProduto1State extends State<TelaProduto1> {
                   ),
                 ],
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               // Nome do produto
               Text(
                 produto["nome"],
@@ -145,16 +148,16 @@ class _TelaProduto1State extends State<TelaProduto1> {
                   color: Colors.blue[900],
                 ),
               ),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               // Preço e marca
               Text(
                 produto["preco"],
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20.0,
                   color: Colors.black,
                 ),
               ),
-              SizedBox(height: 4.0),
+              const SizedBox(height: 4.0),
               Text(
                 produto["marca"],
                 style: TextStyle(
@@ -162,14 +165,14 @@ class _TelaProduto1State extends State<TelaProduto1> {
                   color: Colors.grey[600],
                 ),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               // Descrição do produto
               Container(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 color: Colors.grey[200],
                 child: Text(
                   produto["descricao"],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16.0,
                     color: Colors.black,
                   ),

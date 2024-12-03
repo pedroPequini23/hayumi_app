@@ -12,6 +12,7 @@ class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginPageState createState() => _LoginPageState();
 }
 
@@ -29,12 +30,12 @@ class _LoginPageState extends State<LoginPage> {
     if (emailUsu.isEmpty || senhaUsu.isEmpty) {
       // Exibe uma mensagem se os campos estão vazios
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Por favor, preencha todos os campos.")),
+        const SnackBar(content: Text("Por favor, preencha todos os campos.")),
       );
     } else if (!RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(emailUsu)) {
       // Exibe uma mensagem se o formato do email não é válido
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Por favor, insira um email válido.")),
+        const SnackBar(content: Text("Por favor, insira um email válido.")),
       );
     } else {
       // Navega para a próxima tela se tudo estiver correto
@@ -134,6 +135,7 @@ Widget build(BuildContext context) {
               ),
               child: SizedBox.expand(
                 child: TextButton(
+                  onPressed: validarLogin,
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -147,8 +149,7 @@ Widget build(BuildContext context) {
                         textAlign: TextAlign.left,
                       ),
                     ],
-                  ),
-                  onPressed: validarLogin, // Chama a função de validação
+                  ), // Chama a função de validação
                 ),
               ),
             ),

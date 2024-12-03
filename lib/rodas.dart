@@ -3,10 +3,17 @@ import 'package:hayumi/freios.dart';
 import 'package:hayumi/motor.dart';
 import 'package:hayumi/pneus.dart';
 import 'package:hayumi/rodas1.dart';
+import 'package:hayumi/rodas2.dart';
+import 'package:hayumi/rodas3.dart';
+import 'package:hayumi/rodas4.dart';
+import 'package:hayumi/rodas5.dart';
 import 'package:hayumi/todos.dart';
 
 class PagRodas extends StatefulWidget {
+  const PagRodas({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _PagRodasState createState() => _PagRodasState();
 }
 
@@ -26,37 +33,37 @@ class _PagRodasState extends State<PagRodas> with SingleTickerProviderStateMixin
   }
 
   // Função para navegar entre as telas 
-  void _navigateToScreen(int index) {
+  void _navegacaoentretelas(int index) {
     if (index == 1) return; // Evita recarregar a pag que ta selecianada 
     switch (index) {
       case 0:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TelaTodos()),
+          MaterialPageRoute(builder: (context) => const TelaTodos()),
         );
         break;
       case 1:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagRodas()),
+          MaterialPageRoute(builder: (context) => const PagRodas()),
         );
         break;
       case 2:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagPneus()),
+          MaterialPageRoute(builder: (context) => const PagPneus()),
         );
         break;
       case 3:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagMotor()),
+          MaterialPageRoute(builder: (context) => const PagMotor()),
         );
         break;
       case 4:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagFreios()),
+          MaterialPageRoute(builder: (context) => const PagFreios()),
         );
         break;
     }
@@ -65,22 +72,22 @@ class _PagRodasState extends State<PagRodas> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 214, 239, 255),
+      backgroundColor: const Color.fromARGB(255, 214, 239, 255),
       appBar: AppBar(
         title: const Text('Rodas',style: TextStyle(
             color: Color(0xFFFFCC00), 
           ),),
-          backgroundColor: Color.fromARGB(255, 0, 36, 84),
+          backgroundColor: const Color.fromARGB(255, 0, 36, 84),
           elevation: 0,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Color(0xFFFFCC00),
           ),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => TelaTodos()),
+              MaterialPageRoute(builder: (context) => const TelaTodos()),
             );
           },
         ),
@@ -92,17 +99,17 @@ class _PagRodasState extends State<PagRodas> with SingleTickerProviderStateMixin
           ),
         ],
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(48.0),
+          preferredSize: const Size.fromHeight(48.0),
           child: TabBar(
             controller: _tabController,
             isScrollable: false, 
-            labelColor: Color.fromARGB(255, 255, 204, 0),
+            labelColor: const Color.fromARGB(255, 255, 204, 0),
             unselectedLabelColor: const Color.fromARGB(255, 255, 204, 0),
-            indicator: BoxDecoration(), // Remove o marcador de aba selecionada
+            indicator: const BoxDecoration(), // Remove o marcador de aba selecionada
             onTap: (index) {
-              _navigateToScreen(index); // Chama a função de navegação
+              _navegacaoentretelas(index); // Chama a função de navegação
             },
-            tabs: [
+            tabs: const [
               Tab(text: 'Todos'),
               Tab(text: 'Rodas'),
               Tab(text: 'Pneus'),
@@ -122,45 +129,48 @@ class _PagRodasState extends State<PagRodas> with SingleTickerProviderStateMixin
             ImageButton(
               imagePath: 'img/rodas_aro15_sport.jpg',
               label: 'Rodas esportivas STO',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => roda1()),
+                  MaterialPageRoute(builder: (context) => const Roda2()),
                 );
               },
             ),
             ImageButton(
               imagePath: 'img/rodas_bmw_aro22.jpg',
               label: 'Jogo de rodas BMW aro 22',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PagPneus()),
+                  MaterialPageRoute(builder: (context) => const Roda1()),
                 );
               },
             ),
             ImageButton(
               imagePath: 'img/4_rodas_creta_i30_veloster.jpg',
-              label: 'Jogo de rodas para Hyundai i30, creta e veloster',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              label: 'Jogo de rodas para Hyundai e Chevrolet',
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
-                // navegação
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Roda5()),
+                );
               },
             ),
             ImageButton(
               imagePath: 'img/rodas_duster_oroch.jpg',
               label: 'Rodas para Renault duster e oroch',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PagFreios()),
+                  MaterialPageRoute(builder: (context) => const Roda3()),
                 );
               },
             ),
@@ -168,10 +178,13 @@ class _PagRodasState extends State<PagRodas> with SingleTickerProviderStateMixin
             ImageButton(
               imagePath: 'img/rodas_onix_prisma.jpg',
               label: 'Rodas para Chevrolet onix e prisma',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
-                // Navegação
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Roda4()),
+                );
               },
             ),
           ],
