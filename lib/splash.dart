@@ -6,7 +6,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 36, 84), // Cor de fundo da tela de splash
+      backgroundColor: const Color.fromARGB(255, 0, 36, 84), // Cor de fundo da tela de splash
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

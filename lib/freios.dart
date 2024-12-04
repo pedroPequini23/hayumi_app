@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hayumi/motorap.dart';
+import 'package:hayumi/freio1.dart';
+import 'package:hayumi/freio2.dart';
+import 'package:hayumi/freio3.dart';
+import 'package:hayumi/freio4.dart';
+import 'package:hayumi/freio5.dart';
 import 'package:hayumi/motor.dart';
 import 'package:hayumi/pneus.dart';
 import 'package:hayumi/rodas.dart';
 import 'package:hayumi/todos.dart';
 
 class PagFreios extends StatefulWidget {
+  const PagFreios({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _PagFreiosState createState() => _PagFreiosState();
 }
 
@@ -26,37 +33,37 @@ class _PagFreiosState extends State<PagFreios> with SingleTickerProviderStateMix
   }
 
   // Função para navegar entre as telas 
-  void _navigateToScreen(int index) {
+  void _navegacaoentretelas(int index) {
     if (index == 4) return; // Evita recarregar a pag que ta selecianada pelo numero do case
     switch (index) {
       case 0:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TelaTodos()),
+          MaterialPageRoute(builder: (context) => const TelaTodos()),
         );
         break;
       case 1:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagRodas()),
+          MaterialPageRoute(builder: (context) => const PagRodas()),
         );
         break;
       case 2:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagPneus()),
+          MaterialPageRoute(builder: (context) => const PagPneus()),
         );
         break;
       case 3:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagMotor()),
+          MaterialPageRoute(builder: (context) => const PagMotor()),
         );
         break;
       case 4:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PagFreios()),
+          MaterialPageRoute(builder: (context) => const PagFreios()),
         );
         break;
     }
@@ -66,22 +73,22 @@ class _PagFreiosState extends State<PagFreios> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 214, 239, 255),
+      backgroundColor: const Color.fromARGB(255, 214, 239, 255),
       appBar: AppBar(
         title: const Text('Freios',style: TextStyle(
             color: Color(0xFFFFCC00), 
           ),),
-          backgroundColor: Color.fromARGB(255, 0, 36, 84),
+          backgroundColor: const Color.fromARGB(255, 0, 36, 84),
           elevation: 0,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Color(0xFFFFCC00),
           ),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => TelaTodos()),
+              MaterialPageRoute(builder: (context) => const TelaTodos()),
             );
           },
         ),
@@ -93,17 +100,17 @@ class _PagFreiosState extends State<PagFreios> with SingleTickerProviderStateMix
           ),
         ],
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(48.0),
+          preferredSize: const Size.fromHeight(48.0),
           child: TabBar(
             controller: _tabController,
             isScrollable: false, 
-            labelColor: Color.fromARGB(255, 255, 204, 0),
+            labelColor: const Color.fromARGB(255, 255, 204, 0),
             unselectedLabelColor: const Color.fromARGB(255, 255, 204, 0),
-            indicator: BoxDecoration(), // Remove a marca de aba selecionada
+            indicator: const BoxDecoration(), // Remove a marca de aba selecionada
             onTap: (index) {
-              _navigateToScreen(index); // Chama a função de navegação
+              _navegacaoentretelas(index); // Chama a função de navegação
             },
-            tabs: [
+            tabs: const [
               Tab(text: 'Todos'),
               Tab(text: 'Rodas'),
               Tab(text: 'Pneus'),
@@ -121,45 +128,51 @@ class _PagFreiosState extends State<PagFreios> with SingleTickerProviderStateMix
           mainAxisSpacing: 10.0,
           children: [
             ImageButton(
-              imagePath: 'img/freio_disco_ceramica_280mm.jpg',
-              label: 'Freio a disco de cerâmica para Saveiro.',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              imagePath: 'img/freio_dianteiro_328mm.jpg',
+              label: 'Par de discos de freio dianteiro de 328mm',
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Motorap()),
+                  MaterialPageRoute(builder: (context) => const Freio1()),
                 );
               },
             ),
             ImageButton(
               imagePath: 'img/freio_disco_dianteiro_328mm.jpg',
-              label: 'Freio a disco dianteiro de 328mm',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              label: 'Freio a disco dianteiro de 328mm Volvo XC60',
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PagMotor()),
+                  MaterialPageRoute(builder: (context) => const Freio2()),
                 );
               },
             ),
             ImageButton(
-              imagePath: 'img/freio_disco_dianteiro280mm.jpg',
+              imagePath: 'img/freio_dianteiro_280mm.jpg',
               label: 'Freio a disco dianteiro de 280mm',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
-                //  navegação
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Freio3()),
+                 );
               },
             ),
             ImageButton(
-              imagePath: 'img/freio_disco_freemax_287mm.jpg',
+              imagePath: 'img/freio_freemax_287mm.jpg',
               label: 'Freio a disco freemax de 287mm',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
-              // navegacao
+               Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Freio4()),
+                );
                
               },
             ),
@@ -167,10 +180,13 @@ class _PagFreiosState extends State<PagFreios> with SingleTickerProviderStateMix
             ImageButton(
               imagePath: 'img/freio_disco_ventilado_280mm.jpg',
               label: 'Freio a disco ventilado de 280mm',
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 0, 36, 84),
+              labelStyle: const TextStyle(color: Color.fromARGB(255, 0, 36, 84),
               fontWeight: FontWeight.bold),
               onPressed: () {
-                // Navegação
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Freio5()),
+                );
               },
             ),
           ],
@@ -211,7 +227,7 @@ class ImageButton extends StatelessWidget {
           Expanded(
             child: Image.asset(
               imagePath,
-              fit: BoxFit.cover, // A imagem vai cobrir o espaço disponível
+              fit: BoxFit.contain, // A imagem vai cobrir o espaço disponível
             ),
           ),
           const SizedBox(height: 8.0), // espaçamento pequeno antes do texto
