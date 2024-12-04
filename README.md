@@ -61,3 +61,11 @@ A seguir, o vídeo do funcionamento do aplicativo que mostra o catálogo dos pro
 
 
 https://github.com/user-attachments/assets/2e06b6c4-ec38-4449-b39b-4a7bb5a5e131  
+
+---
+
+Links para a Wiki:
+- Home: https://github.com/pedroPequini23/hayumi_app/wiki
+- Video: https://github.com/pedroPequini23/hayumi_app/wiki/%F0%9F%8E%A5-V%C3%ADdeo-do-Funcionamento-do-Aplicativo
+- Códigos das views: https://github.com/pedroPequini23/hayumi_app/wiki/%F0%9F%92%BB-C%C3%B3digos-das-Views
+- Funcionalidades: https://github.com/pedroPequini23/hayumi_app/wiki/%F0%9F%93%B1-Funcionalidades
